@@ -1,0 +1,13 @@
+FROM kodbasen/java-jdk-arm:jdk-8u111-b14
+
+MAINTAINER http://github.com/kodbasen
+
+ENV VERSION="groovy.version"
+
+COPY resources/groovy /groovy
+
+COPY script.groovy /app/script.groovy
+
+ENTRYPOINT ["/groovy/bin/groovy"]
+
+CMD ["/app/script.groovy"]
